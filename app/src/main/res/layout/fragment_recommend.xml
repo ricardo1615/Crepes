@@ -1,0 +1,62 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.lenovo.crepes.fragments.cartfragments.RecommendFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/carts_fragment_head"
+                layout="@layout/head_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <include
+                android:id="@+id/fragment_cart_jinqibikan"
+                layout="@layout/fragment_cart_jinqibikan" />
+
+            <include
+                android:id="@+id/fragment_cart_huorezhuanti"
+                layout="@layout/fragment_cart_huorezhuanti" />
+
+            <include
+                android:id="@+id/fragment_cart_caininxihuan"
+                layout="@layout/fragment_cart_caininxihuan" />
+
+            <include
+                android:id="@+id/fragment_cart_dashijia"
+                layout="@layout/fragment_cart_dashijia" />
+
+            <include
+                android:id="@+id/fragment_cart_guomanyejingcai"
+                layout="@layout/fragment_cart_guomanyejingcai" />
+
+            <include
+                android:id="@+id/fragment_cart_meimandashijian"
+                layout="@layout/fragment_cart_meimandashijian" />
+
+            <include
+                android:id="@+id/fragment_cart_remenlianzai"
+                layout="@layout/fragment_cart_remenlianzai" />
+
+            <include
+                android:id="@+id/fragment_cart_tiaomanzhuanqu"
+                layout="@layout/fragment_cart_tiaomanzhuanqu" />
+
+            <include
+                android:id="@+id/fragment_cart_zuixinshangjia"
+                layout="@layout/fragment_cart_zuixinshangjia" />
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</FrameLayout>

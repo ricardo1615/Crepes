@@ -1,0 +1,40 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.1"
+    useLibrary 'org.apache.http.legacy'
+    defaultConfig {
+        applicationId "com.lenovo.crepes"
+        minSdkVersion 13
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.1.0'
+    compile 'de.greenrobot:eventbus:3.0.0-beta1'
+    compile 'com.google.code.gson:gson:2.2.4'
+    compile 'com.jiechic.library:xUtils:2.6.14'
+    compile 'com.zhy:percent-support-extends:1.1.1'
+    compile project(':library')
+    compile project(':share')
+    compile files('libs/glide-3.6.1.jar')
+    compile project(':slidelibrary')
+    compile 'eu.the4thfloor.volley:com.android.volley:2015.05.28'
+    compile 'com.android.support:recyclerview-v7:23.1.0'
+    compile files('libs/antlr-2.7.4.jar')
+    compile files('libs/chardet-1.0.jar')
+    compile files('libs/cpdetector_1.0.10.jar')
+    compile files('libs/jargs-1.0.jar')
+}

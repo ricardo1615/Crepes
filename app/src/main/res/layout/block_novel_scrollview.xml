@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <!--轮播器-->
+    <include
+        android:id="@+id/include_head_novel"
+        layout="@layout/head_title"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_heightPercent="50%w" />
+    <!--开头-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/follow_novel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@mipmap/img_novel_title_dian" />
+
+        <ImageView
+            android:id="@+id/find_novel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@mipmap/img_novel_title_book" />
+
+        <ImageView
+            android:id="@+id/rank_novel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@mipmap/img_novel_title_chart" />
+    </LinearLayout>
+    <!--开头文字-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+
+            android:text="追小说" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="找小说" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="排行榜" />
+    </LinearLayout>
+
+    <include
+        layout="@layout/line_gray"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <!--最新更新-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="4dp">
+
+            <ImageView
+                android:id="@+id/img_refresh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/img_novel_refresh"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp" />
+
+            <TextView
+                android:id="@+id/tv_refresh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="9dp"
+                android:layout_marginStart="9dp"
+                android:layout_toEndOf="@+id/img_refresh"
+                android:layout_toRightOf="@+id/img_refresh"
+                android:text="最新更新" />
+
+            <ImageView
+                android:id="@+id/more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="6dp"
+                android:layout_marginRight="6dp"
+                android:src="@mipmap/img_more_s" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <include
+                android:id="@+id/refresh1"
+                layout="@layout/block_novel_book" />
+
+            <include
+                android:id="@+id/refresh2"
+                layout="@layout/block_novel_book" />
+
+            <include
+                android:id="@+id/refresh3"
+                layout="@layout/block_novel_book" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <include
+        layout="@layout/line_gray"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <!--动画进行时-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="4dp">
+
+            <ImageView
+                android:id="@+id/img_nowplying"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/img_novel_more"
+                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"/>
+
+            <TextView
+                android:id="@+id/tv_nowplaying"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="9dp"
+                android:layout_marginStart="9dp"
+                android:layout_toEndOf="@+id/img_nowplying"
+                android:layout_toRightOf="@+id/img_nowplying"
+                android:text="动画进行时" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <include
+                android:id="@+id/nowplaying1"
+                layout="@layout/block_novel_book" />
+
+            <include
+                android:id="@+id/nowplaying2"
+                layout="@layout/block_novel_book" />
+
+            <include
+                android:id="@+id/nowplaying3"
+                layout="@layout/block_novel_book" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <include
+        layout="@layout/line_gray"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <!--即将动画化-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="4dp">
+
+            <ImageView
+                android:id="@+id/img_play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/img_novel_play"
+                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"/>
+
+            <TextView
+                android:id="@+id/tv_play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="9dp"
+                android:layout_marginStart="9dp"
+                android:layout_toEndOf="@+id/img_play"
+                android:layout_toRightOf="@+id/img_play"
+                android:text="即将动画化" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <include
+                android:id="@+id/willplay1"
+                layout="@layout/block_novel_book" />
+
+            <include
+                android:id="@+id/willplay2"
+                layout="@layout/block_novel_book" />
+
+            <include
+                android:id="@+id/willplay3"
+                layout="@layout/block_novel_book" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <include
+        layout="@layout/line_gray"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <!--经典必看-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="4dp">
+
+            <ImageView
+                android:id="@+id/img_classic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/img_novel_eye"
+                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"/>
+
+            <TextView
+                android:id="@+id/tv_classic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="9dp"
+                android:layout_marginStart="9dp"
+                android:layout_toEndOf="@+id/img_classic"
+                android:layout_toRightOf="@+id/img_classic"
+                android:text="经典必看" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <include
+                android:id="@+id/classic1"
+                layout="@layout/block_novel_book" />
+
+            <include
+                android:id="@+id/classic2"
+                layout="@layout/block_novel_book" />
+
+            <include
+                android:id="@+id/classic3"
+                layout="@layout/block_novel_book" />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <include
+                android:id="@+id/classic4"
+                layout="@layout/block_novel_book" />
+
+            <include
+                android:id="@+id/classic5"
+                layout="@layout/block_novel_book" />
+
+            <include
+                android:id="@+id/classic6"
+                layout="@layout/block_novel_book" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <include
+        layout="@layout/line_gray"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</com.zhy.android.percent.support.PercentLinearLayout>

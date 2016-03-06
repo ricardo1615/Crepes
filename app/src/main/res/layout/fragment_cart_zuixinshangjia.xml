@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:background="#eee" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:src="@mipmap/img_latest_pub" />
+
+        <TextView
+            android:id="@+id/cart_zuixinshangjia_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="最新上架"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <include
+            android:id="@+id/zuixinshangjia1"
+            layout="@layout/fragment_cart_item" />
+
+        <include
+            android:id="@+id/zuixinshangjia2"
+            layout="@layout/fragment_cart_item" />
+
+        <include
+            android:id="@+id/zuixinshangjia3"
+            layout="@layout/fragment_cart_item" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <include
+            android:id="@+id/zuixinshangjia4"
+            layout="@layout/fragment_cart_item" />
+
+        <include
+            android:id="@+id/zuixinshangjia5"
+            layout="@layout/fragment_cart_item" />
+
+        <include
+            android:id="@+id/zuixinshangjia6"
+            layout="@layout/fragment_cart_item" />
+
+    </LinearLayout>
+</com.zhy.android.percent.support.PercentLinearLayout>

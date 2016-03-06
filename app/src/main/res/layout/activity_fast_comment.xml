@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.lenovo.crepes.FastCommentActivity">
+
+    <TextView
+        android:id="@+id/tv_comment_title"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="来吐槽吧"
+        app:layout_heightPercent="10%h"
+        app:layout_textSizePercent="5%w" />
+
+    <ImageView
+        android:id="@+id/iv_comment_back"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:scaleType="center"
+        android:src="@mipmap/img_back"
+        app:layout_heightPercent="10%h"
+        app:layout_widthPercent="10%h" />
+
+
+    <ImageView
+        android:id="@+id/line4"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_alignBottom="@+id/tv_comment_title"
+        android:scaleType="fitXY"
+        android:src="@mipmap/img_work_instru_bac" />
+
+    <com.lenovo.crepes.customerView.FlowLayout
+        android:id="@+id/fll_tucao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/line4" />
+
+
+</com.zhy.android.percent.support.PercentRelativeLayout>

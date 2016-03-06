@@ -1,0 +1,246 @@
+<com.zhy.android.percent.support.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#cccccc"
+    tools:context="com.lenovo.crepes.fragments.MineFragment">
+
+    <ImageView
+        android:id="@+id/iv_mine_background"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/head_photo"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/img_ucenter_def_bac"
+        app:layout_heightPercent="40%h" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/mine_head_background"
+        app:layout_heightPercent="40%h" />
+
+    <ImageView
+        android:id="@+id/iv_mine_setting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="15dp"
+        android:src="@mipmap/img_icon_settings" />
+
+    <ImageView
+        android:id="@+id/iv_user_photo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:src="@mipmap/img_def_head"
+        app:layout_heightPercent="16%w"
+        app:layout_marginTopPercent="10%h"
+        app:layout_widthPercent="16%w" />
+
+    <TextView
+        android:id="@+id/tv_user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/iv_user_photo"
+        android:layout_centerHorizontal="true"
+        android:text="请登录"
+        android:textColor="#ffffff"
+        app:layout_marginTopPercent="3%h" />
+
+    <TextView
+        android:id="@+id/tv_mine_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_user_name"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="登录后可以使用漫画订阅、发表评论，我们还会提醒您订阅的作品更新哦"
+        android:textColor="#ffffff"
+        app:layout_marginLeftPercent="8%w"
+        app:layout_marginRightPercent="8%w"
+        app:layout_marginTopPercent="3%h" />
+
+    <RadioGroup
+        android:id="@+id/rg_mine_type"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/iv_mine_background"
+        android:layout_marginTop="3dp"
+        android:background="@drawable/background_button"
+        android:orientation="horizontal"
+        app:layout_heightPercent="7%h"
+        app:layout_marginLeftPercent="3%w"
+        app:layout_marginRightPercent="3%w">
+
+        <RadioButton
+            android:id="@+id/rb_mine_comic"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/news_button"
+            android:button="@null"
+            android:gravity="center"
+            android:text="我的漫画"
+            android:textColor="@drawable/news_button_textcolor" />
+
+        <RadioButton
+            android:id="@+id/rb_mine_novel"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/news_button"
+            android:button="@null"
+            android:gravity="center"
+            android:text="我的小说"
+            android:textColor="@drawable/news_button_textcolor" />
+    </RadioGroup>
+
+    <LinearLayout
+        android:id="@+id/ll_mine_comic"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/rg_mine_type"
+        android:layout_marginTop="3dp"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_heightPercent="8%h">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:src="@mipmap/img_icon_cartoon_subscribe" />
+
+        <TextView
+            android:id="@+id/tv_mine_subscribe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="6"
+            android:text="漫画订阅" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@mipmap/img_more_s" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_mine_history"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/ll_mine_comic"
+        android:layout_marginTop="1dp"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_heightPercent="8%h">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:src="@mipmap/img_icon_history" />
+
+        <TextView
+            android:id="@+id/tv_mine_history"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="6"
+            android:text="浏览记录" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@mipmap/img_more_s" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_mine_download"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/ll_mine_history"
+        android:layout_marginTop="1dp"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_heightPercent="8%h">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:src="@mipmap/img_icon_cartoon_download" />
+
+        <TextView
+            android:id="@+id/tv_mine_download"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="6"
+            android:text="漫画下载" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@mipmap/img_more_s" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_comic_comment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/ll_mine_download"
+        android:layout_marginTop="1dp"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_heightPercent="8%h">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:src="@mipmap/img_icon_cartoon_discuss" />
+
+        <TextView
+            android:id="@+id/tv_mine_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="6"
+            android:text="漫画评论" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@mipmap/img_more_s" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_login_exit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ll_comic_comment"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/login_button"
+        android:text="登录/注册"
+        android:textColor="#ffffff"
+        app:layout_marginLeftPercent="5%w"
+        app:layout_marginRightPercent="5%w" />
+
+</com.zhy.android.percent.support.PercentRelativeLayout>

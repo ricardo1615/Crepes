@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.lenovo.crepes.CartCategoryActivity">
+
+    <RelativeLayout
+        android:id="@+id/cart_Two"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_heightPercent="10%h">
+
+        <ImageView
+            android:id="@+id/cart_two_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:src="@mipmap/img_back" />
+
+        <TextView
+            android:id="@+id/cart_two_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="漫画分类"
+            android:textSize="23sp" />
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="@mipmap/img_work_instru_bac" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_heightPercent="10%h">
+
+        <CheckBox
+            android:id="@+id/category_ticai"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:button="@null"
+            android:drawableRight="@drawable/img_triangle_down"
+            android:gravity="center"
+            android:text="题材"
+            android:textColor="@drawable/font_color"
+            android:textSize="14sp" />
+
+        <CheckBox
+            android:id="@+id/category_duzhequn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="6"
+            android:button="@null"
+            android:drawableRight="@drawable/img_triangle_down"
+            android:gravity="center"
+            android:text="读者群"
+            android:textColor="@drawable/font_color"
+            android:textSize="14sp" />
+
+        <CheckBox
+            android:id="@+id/category_jindu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:button="@null"
+            android:drawableRight="@drawable/img_triangle_down"
+            android:gravity="center"
+            android:text="进度"
+            android:textColor="@drawable/font_color"
+            android:textSize="14sp" />
+
+        <CheckBox
+            android:id="@+id/category_diyu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:button="@null"
+            android:drawableRight="@drawable/img_triangle_down"
+            android:gravity="center"
+            android:text="地域"
+            android:textColor="@drawable/font_color"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="#faaa"/>
+
+    <com.zhy.android.percent.support.PercentRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+
+
+        <LinearLayout
+            android:id="@+id/category_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            app:layout_heightPercent="8%h">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="搜索结果"
+                android:textColor="#a000"
+                android:textSize="18sp" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <RadioGroup
+                android:id="@+id/category_radiogroup2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="7dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/category_renqi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@null"
+                    android:checked="true"
+                    android:drawableRight="@drawable/img_down"
+                    android:text="人气"
+                    android:textColor="@drawable/font_color"
+                    android:textSize="18sp" />
+
+                <RadioButton
+                    android:id="@+id/category_gengxin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    android:button="@null"
+                    android:drawableRight="@drawable/img_down"
+                    android:text="更新"
+                    android:textColor="@drawable/font_color"
+                    android:textSize="18sp" />
+            </RadioGroup>
+        </LinearLayout>
+        <com.handmark.pulltorefresh.library.PullToRefreshGridView
+            android:id="@+id/category_gridview_jieguo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/category_layout">
+
+        </com.handmark.pulltorefresh.library.PullToRefreshGridView>
+        <GridView
+            android:id="@+id/category_gridview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:numColumns="4"
+            android:gravity="top"
+            android:background="#faaa"
+            android:visibility="visible"></GridView>
+    </com.zhy.android.percent.support.PercentRelativeLayout>
+
+</com.zhy.android.percent.support.PercentLinearLayout>

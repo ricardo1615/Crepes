@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.lenovo.crepes.TypesNewsActivity">
+
+    <TextView
+        android:id="@+id/types_news_title"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        android:text="新闻分类"
+        app:layout_heightPercent="10%h"
+        app:layout_textSizePercent="5%w" />
+
+    <ImageView
+        android:id="@+id/types_news_back"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="center"
+        android:src="@mipmap/img_back"
+        app:layout_heightPercent="10%h"
+        app:layout_widthPercent="10%h" />
+
+    <ImageView
+        android:id="@+id/types_news_menu"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_alignParentRight="true"
+        android:scaleType="center"
+        android:src="@mipmap/img_menu_icon"
+        app:layout_heightPercent="10%h"
+        app:layout_widthPercent="10%h" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_alignBottom="@+id/types_news_title"
+        android:scaleType="fitXY"
+        android:src="@mipmap/img_work_instru_bac" />
+
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        android:id="@+id/pulllist_types_news"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/types_news_title"
+        app:layout_heightPercent="90%h" />
+
+</com.zhy.android.percent.support.PercentRelativeLayout>

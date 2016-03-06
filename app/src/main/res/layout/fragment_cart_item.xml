@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:background="@color/white"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <View
+        android:layout_width="0dp"
+        app:layout_widthPercent="2%sw"
+        app:layout_heightPercent="40%sh"
+        android:layout_height="0dp"/>
+    <LinearLayout
+        android:layout_width="0dp"
+        app:layout_widthPercent="29%sw"
+        app:layout_heightPercent="40%sh"
+        android:orientation="vertical"
+        android:layout_height="0dp">
+        <ImageView
+            android:id="@+id/cart_item_imageview"
+            android:layout_width="match_parent"
+            android:layout_weight="19"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/image_shape"
+            android:src="@mipmap/img_lauch_bitch"
+            android:layout_height="0dp" />
+        <TextView
+            android:id="@+id/cart_item_title"
+            android:layout_width="match_parent"
+            android:layout_marginTop="2dp"
+            android:layout_weight="3"
+            android:textSize="13sp"
+            android:text="黑色五叶草"
+            android:singleLine="true"
+            android:textColor="#b000"
+            android:layout_height="0dp" />
+        <TextView
+            android:id="@+id/cart_item_auther"
+            android:layout_width="match_parent"
+            android:layout_weight="2"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="4dp"
+            android:text="XXXXXX"
+            android:textSize="10sp"
+            android:textColor="#9000"
+            android:layout_height="0dp">
+        </TextView>
+    </LinearLayout>
+    <View
+        android:layout_width="0dp"
+        app:layout_widthPercent="2%sw"
+        app:layout_heightPercent="40%sh"
+        android:layout_height="0dp"/>
+
+</com.zhy.android.percent.support.PercentLinearLayout>

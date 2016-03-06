@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.lenovo.crepes.NewsWebActivity">
+
+    <TextView
+        android:id="@+id/tv_news_web_title"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="新闻正文"
+        app:layout_heightPercent="10%h"
+        app:layout_textSizePercent="5%w" />
+
+    <ImageView
+        android:id="@+id/iv_news_web_back"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="center"
+        android:src="@mipmap/img_back"
+        app:layout_heightPercent="10%h"
+        app:layout_widthPercent="10%h" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_alignBottom="@+id/tv_news_web_title"
+        android:scaleType="fitXY"
+        android:src="@mipmap/img_work_instru_bac" />
+
+    <WebView
+        android:id="@+id/wv_news"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/tv_news_web_title"
+        app:layout_heightPercent="80%h" />
+
+    <com.zhy.android.percent.support.PercentLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        app:layout_heightPercent="10%h">
+
+        <ImageView
+            android:id="@+id/iv_web_praise"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scaleType="center"
+            android:src="@mipmap/img_praise_gray"
+            app:layout_paddingLeftPercent="12%w" />
+
+        <TextView
+            android:id="@+id/tv_web_praise"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="left|center_vertical"
+            android:text="赞" />
+
+        <ImageView
+            android:id="@+id/iv_web_share"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scaleType="center"
+            android:src="@mipmap/img_share_icon"
+            app:layout_paddingLeftPercent="12%w" />
+
+        <TextView
+            android:id="@+id/tv_web_share"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="left|center_vertical"
+            android:text="分享" />
+
+        <ImageView
+            android:id="@+id/iv_web_comment"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scaleType="center"
+            android:src="@mipmap/img_discuss_gray"
+            app:layout_paddingLeftPercent="12%w" />
+
+        <TextView
+            android:id="@+id/tv_web_comment"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="left|center_vertical"
+            android:text="评论" />
+
+
+    </com.zhy.android.percent.support.PercentLinearLayout>
+
+</com.zhy.android.percent.support.PercentRelativeLayout>

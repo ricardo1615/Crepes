@@ -1,0 +1,202 @@
+<com.zhy.android.percent.support.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    tools:context="com.lenovo.crepes.fragments.LoginAndRegist.LoginFragment">
+
+    <TextView
+        android:id="@+id/login_fragment_title"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        android:text="账号登录"
+        app:layout_heightPercent="10%h"
+        app:layout_textSizePercent="5%w" />
+
+    <ImageView
+        android:id="@+id/login_back"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="center"
+        android:src="@mipmap/img_back"
+        app:layout_heightPercent="10%h"
+        app:layout_widthPercent="10%h" />
+
+    <TextView
+        android:id="@+id/tv_regist"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_alignParentRight="true"
+        android:gravity="center"
+        android:text="注册"
+        android:textColor="#0099ff"
+        app:layout_heightPercent="10%h"
+        app:layout_widthPercent="10%h" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_alignBottom="@+id/login_fragment_title"
+        android:scaleType="fitXY"
+        android:src="@mipmap/img_work_instru_bac" />
+
+    <com.zhy.android.percent.support.PercentLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/login_fragment_title"
+        android:background="#FFFFFF"
+        android:orientation="horizontal"
+        app:layout_heightPercent="7%h"
+        app:layout_marginLeftPercent="5%w"
+        app:layout_marginRightPercent="5%w"
+        app:layout_marginTopPercent="5%h">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:scaleType="center"
+            android:src="@mipmap/img_icon_headp"
+            app:layout_heightPercent="100%h"
+            app:layout_widthPercent="100%h" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:background="#a8a8a8"
+            app:layout_heightPercent="70%h" />
+
+        <EditText
+            android:id="@+id/et_user_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:hint="账号"
+            app:layout_marginLeftPercent="5%w" />
+    </com.zhy.android.percent.support.PercentLinearLayout>
+
+    <com.zhy.android.percent.support.PercentLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/login_fragment_title"
+        android:background="#FFFFFF"
+        android:orientation="horizontal"
+        app:layout_heightPercent="7%h"
+        app:layout_marginLeftPercent="5%w"
+        app:layout_marginRightPercent="5%w"
+        app:layout_marginTopPercent="14%h">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:scaleType="center"
+            android:src="@mipmap/img_icon_clockp"
+            app:layout_heightPercent="100%h"
+            app:layout_widthPercent="100%h" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:background="#a8a8a8"
+            app:layout_heightPercent="70%h" />
+
+        <EditText
+            android:id="@+id/et_user_password"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:hint="密码"
+            app:layout_marginLeftPercent="5%w" />
+    </com.zhy.android.percent.support.PercentLinearLayout>
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/login_fragment_title"
+        android:background="@drawable/login_button"
+        android:text="进入动漫之家"
+        android:textColor="#FFFFFF"
+        app:layout_marginLeftPercent="5%w"
+        app:layout_marginRightPercent="5%w"
+        app:layout_marginTopPercent="28%h" />
+
+    <com.zhy.android.percent.support.PercentLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/btn_login"
+        android:orientation="horizontal"
+        app:layout_heightPercent="7%h"
+        app:layout_marginLeftPercent="5%w"
+        app:layout_marginRightPercent="5%w"
+        app:layout_marginTopPercent="3%h">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="#a8a8a8"
+            app:layout_marginLeftPercent="5%w" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:text="使用第三方账号登录"
+            android:textColor="#000000" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="#a8a8a8"
+            app:layout_marginRightPercent="5%w" />
+    </com.zhy.android.percent.support.PercentLinearLayout>
+
+    <com.zhy.android.percent.support.PercentLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/btn_login"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        app:layout_heightPercent="7%h"
+        app:layout_marginLeftPercent="5%w"
+        app:layout_marginRightPercent="5%w"
+        app:layout_marginTopPercent="13%h"
+        app:layout_widthPercent="30%h">
+
+        <ImageView
+            android:id="@+id/iv_login_weibo"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:src="@mipmap/img_share_weibo" />
+
+        <ImageView
+            android:id="@+id/iv_login_qq"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:src="@mipmap/img_share_qq" />
+
+        <ImageView
+            android:id="@+id/iv_login_weixin"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:src="@mipmap/img_share_weixin" />
+    </com.zhy.android.percent.support.PercentLinearLayout>
+
+</com.zhy.android.percent.support.PercentRelativeLayout>

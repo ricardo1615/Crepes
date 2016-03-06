@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <CheckBox
+        android:id="@+id/rb_novel_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:button="@null"
+        android:drawableLeft="@drawable/types_news"
+        android:text="轻小说情报" />
+
+    <CheckBox
+        android:id="@+id/rb_anim_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:button="@null"
+        android:drawableLeft="@drawable/types_news"
+        android:text="动画情报" />
+
+    <CheckBox
+        android:id="@+id/rb_something_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:button="@null"
+        android:drawableLeft="@drawable/types_news"
+        android:text="大杂烩" />
+
+    <CheckBox
+        android:id="@+id/rb_pic_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:button="@null"
+        android:drawableLeft="@drawable/types_news"
+        android:text="美图欣赏" />
+
+    <CheckBox
+        android:id="@+id/rb_game_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:button="@null"
+        android:drawableLeft="@drawable/types_news"
+        android:text="游戏资讯" />
+
+    <CheckBox
+        android:id="@+id/rb_comic_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:button="@null"
+        android:drawableLeft="@drawable/types_news"
+        android:text="漫画情报" />
+
+    <CheckBox
+        android:id="@+id/rb_other_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:button="@null"
+        android:drawableLeft="@drawable/types_news"
+        android:text="动漫周边" />
+
+    <CheckBox
+        android:id="@+id/rb_voice_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:button="@null"
+        android:drawableLeft="@drawable/types_news"
+        android:text="声优情报" />
+
+    <CheckBox
+        android:id="@+id/rb_party_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:button="@null"
+        android:drawableLeft="@drawable/types_news"
+        android:text="漫展情报" />
+
+    <CheckBox
+        android:id="@+id/rb_music_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:button="@null"
+        android:drawableLeft="@drawable/types_news"
+        android:text="音乐资讯" />
+
+</LinearLayout>

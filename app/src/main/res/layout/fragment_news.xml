@@ -1,0 +1,97 @@
+<com.zhy.android.percent.support.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.lenovo.crepes.fragments.NewsFragment">
+
+    <TextView
+        android:id="@+id/news_fragment_title"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="动漫资讯"
+        app:layout_heightPercent="10%h"
+        app:layout_textSizePercent="5%w" />
+
+    <ImageView
+        android:id="@+id/news_kinds"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_alignParentRight="true"
+        android:scaleType="center"
+        android:src="@mipmap/img_classify_icon"
+        app:layout_heightPercent="10%h"
+        app:layout_widthPercent="10%h" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_alignBottom="@+id/news_fragment_title"
+        android:scaleType="fitXY"
+        android:src="@mipmap/img_work_instru_bac" />
+
+
+    <com.handmark.pulltorefresh.library.PullToRefreshScrollView
+        android:id="@+id/pullscroll_news_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/news_fragment_title">
+
+        <com.zhy.android.percent.support.PercentRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <include
+                android:id="@+id/news_fragment_head"
+                layout="@layout/head_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <RadioGroup
+                android:id="@+id/rg_news_type"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_below="@id/news_fragment_head"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/background_button"
+                android:orientation="horizontal"
+                app:layout_heightPercent="7%sh"
+                app:layout_marginLeftPercent="3%w"
+                app:layout_marginRightPercent="3%w">
+
+                <RadioButton
+                    android:id="@+id/rb_news_fragment_news"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/news_button"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="新闻"
+                    android:textColor="@drawable/news_button_textcolor" />
+
+                <RadioButton
+                    android:id="@+id/rb_news_fragment_fast"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/news_button"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="快讯"
+                    android:textColor="@drawable/news_button_textcolor" />
+
+            </RadioGroup>
+
+            <com.lenovo.crepes.base.ListViewForScrollView
+                android:id="@+id/lv_vp_news_fragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/rg_news_type"
+                android:layout_marginTop="3dp" />
+        </com.zhy.android.percent.support.PercentRelativeLayout>
+    </com.handmark.pulltorefresh.library.PullToRefreshScrollView>
+
+</com.zhy.android.percent.support.PercentRelativeLayout>

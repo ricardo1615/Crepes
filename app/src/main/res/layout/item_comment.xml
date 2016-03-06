@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.zhy.android.percent.support.PercentLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_comment_author_photo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginLeft="3dp"
+            android:src="@mipmap/bitch_01"
+            app:layout_heightPercent="12%w"
+            app:layout_widthPercent="12%w" />
+
+        <TextView
+            android:id="@+id/tv_comment_author_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:text="海洋与水之王"
+            android:textColor="#0099ff"
+            app:layout_paddingRightPercent="13%w"
+            app:layout_textSizePercent="4%w" />
+    </com.zhy.android.percent.support.PercentLinearLayout>
+
+    <TextView
+        android:id="@+id/tv_comment_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_marginLeftPercent="13%w"
+        app:layout_paddingRightPercent="13%w"
+        app:layout_textSizePercent="4%w" />
+
+    <com.zhy.android.percent.support.PercentLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/tv_comment_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="2010-10-10"
+            app:layout_marginLeftPercent="13%w" />
+
+        <ImageView
+            android:id="@+id/iv_comment_praise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/img_icon_praise_oriange"
+            app:layout_marginLeftPercent="30%w" />
+
+        <TextView
+            android:id="@+id/tv_comment_praise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="23"
+            app:layout_marginLeftPercent="1%w" />
+
+        <ImageView
+            android:id="@+id/iv_comment_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/img_icon_comment_oriange"
+            app:layout_marginLeftPercent="5%w" />
+
+        <TextView
+            android:id="@+id/tv_comment_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="回复"
+            app:layout_marginLeftPercent="1%w" />
+
+    </com.zhy.android.percent.support.PercentLinearLayout>
+</com.zhy.android.percent.support.PercentLinearLayout>

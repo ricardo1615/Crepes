@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_news_fragment_head"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_heightPercent="50%sw" />
+
+    <TextView
+        android:id="@+id/tv_head_news_title"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignBottom="@id/vp_news_fragment_head"
+        android:background="#640099ff"
+        android:gravity="center_vertical"
+        android:text="LL大法好"
+        android:textColor="#ffffff"
+        app:layout_heightPercent="6%sw" />
+
+    <RadioGroup
+        android:id="@+id/rg_news_fragment_head"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_alignBottom="@id/vp_news_fragment_head"
+        android:layout_alignParentRight="true"
+        android:orientation="horizontal"
+        app:layout_heightPercent="3%sw"
+        app:layout_marginBottomPercent="1%w"
+        app:layout_widthPercent="15%sw">
+
+        <RadioButton
+            android:id="@+id/rb_head_one"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:background="@drawable/viewpager_doll"
+            android:button="@null" />
+
+        <RadioButton
+            android:id="@+id/rb_head_two"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:background="@drawable/viewpager_doll"
+            android:button="@null" />
+
+        <RadioButton
+            android:id="@+id/rb_head_three"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:background="@drawable/viewpager_doll"
+            android:button="@null" />
+
+        <RadioButton
+            android:id="@+id/rb_head_four"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:background="@drawable/viewpager_doll"
+            android:button="@null" />
+
+        <RadioButton
+            android:id="@+id/rb_head_five"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:background="@drawable/viewpager_doll"
+            android:button="@null" />
+
+    </RadioGroup>
+
+</com.zhy.android.percent.support.PercentRelativeLayout>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.lenovo.crepes.CommentActivity">
+
+    <TextView
+        android:id="@+id/tv_comment_title"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="新闻正文"
+        app:layout_heightPercent="10%h"
+        app:layout_textSizePercent="5%w" />
+
+    <ImageView
+        android:id="@+id/iv_comment_back"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:scaleType="center"
+        android:src="@mipmap/img_back"
+        app:layout_heightPercent="10%h"
+        app:layout_widthPercent="10%h" />
+
+    <TextView
+        android:id="@+id/tv_comment_amount"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_alignParentRight="true"
+        android:gravity="center"
+        android:text="233条"
+        android:textColor="#0099ff"
+        app:layout_heightPercent="10%h"
+        app:layout_textSizePercent="4%w"
+        app:layout_widthPercent="10%h" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_alignBottom="@+id/tv_comment_title"
+        android:scaleType="fitXY"
+        android:src="@mipmap/img_work_instru_bac" />
+
+    <RadioGroup
+        android:id="@+id/rg_comment_type"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/tv_comment_title"
+        android:layout_marginTop="3dp"
+        android:background="@drawable/background_button"
+        android:orientation="horizontal"
+        app:layout_heightPercent="7%sh"
+        app:layout_marginLeftPercent="3%w"
+        app:layout_marginRightPercent="3%w">
+
+        <RadioButton
+            android:id="@+id/rb_comment_new"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/news_button"
+            android:button="@null"
+            android:gravity="center"
+            android:text="最新评论"
+            android:textColor="@drawable/news_button_textcolor" />
+
+        <RadioButton
+            android:id="@+id/rb_comment_hot"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/news_button"
+            android:button="@null"
+            android:gravity="center"
+            android:text="热门评论"
+            android:textColor="@drawable/news_button_textcolor" />
+
+    </RadioGroup>
+
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        android:id="@+id/pulllist_comment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/rg_comment_type"
+        app:layout_heightPercent="80%h" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentBottom="true"
+        app:layout_widthPercent="10%h">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="发表评论" />
+    </LinearLayout>
+
+</com.zhy.android.percent.support.PercentRelativeLayout>
