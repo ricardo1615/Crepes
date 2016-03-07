@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//
+//分支修改
         SharedPreferences preferences = getSharedPreferences("loginData", Context.MODE_PRIVATE);
 
         String userName = preferences.getString("userName", "");
