@@ -52,6 +52,7 @@
         <activity android:name=".NovelChapterActivity" />
         <activity android:name=".NovelCotentActivity" />
         <activity android:name=".CartWebActivity" />
+        <activity android:name=".SettingsActivity" />
 
         <!-- ###################注册SDK使用的Activity###################### -->
         <!-- 分享编辑页 -->

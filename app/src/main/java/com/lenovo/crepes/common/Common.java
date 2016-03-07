@@ -44,6 +44,8 @@ public interface Common {
     String loginUrl = "http://user.dmzj.com/login/m_confirm";
     //退出
     String exitUrl = "http://v2.api.dmzj.com/device/cancel";
+    //注册
+    String registUrl = "http://v2.api.dmzj.com/device/cancel";
 
     int[] textSizes = {12,15, 17, 19,21, 23, 25};
 }

@@ -71,7 +71,8 @@ public class LoginFragment extends BaseFragment implements View.OnClickListener 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.tv_regist:
+            case R.id.tv_regist://注册
+                getFragmentManager().beginTransaction().replace(R.id.rl_login_replace,new RegistFragment()).commit();
                 break;
             case R.id.btn_login://登录
                 String userName = et_user_name.getText().toString();
@@ -88,13 +89,13 @@ public class LoginFragment extends BaseFragment implements View.OnClickListener 
                     dialog.show();
                 }
                 break;
-            case R.id.iv_login_weibo:
+            case R.id.iv_login_weibo://微博登录
                 break;
-            case R.id.iv_login_qq:
+            case R.id.iv_login_qq://QQ登录
                 break;
-            case R.id.iv_login_weixin:
+            case R.id.iv_login_weixin://微信登录
                 break;
-            case R.id.login_back:
+            case R.id.login_back://返回
                 activity.finish();
                 break;
         }

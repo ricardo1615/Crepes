@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    tools:context="com.lenovo.crepes.SettingsActivity">
+
+    <TextView
+        android:id="@+id/login_fragment_title"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        android:text="设置"
+        app:layout_heightPercent="10%h"
+        app:layout_textSizePercent="5%w" />
+
+    <ImageView
+        android:id="@+id/settings_back"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="center"
+        android:src="@mipmap/img_back"
+        app:layout_heightPercent="10%h"
+        app:layout_widthPercent="10%h" />
+
+    <ImageView
+
+        android:id="@+id/title_line"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_alignBottom="@+id/login_fragment_title"
+        android:scaleType="fitXY"
+        android:src="@mipmap/img_work_instru_bac" />
+
+    <LinearLayout
+        android:id="@+id/net_setting"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/title_line"
+        android:background="#FFFFFF"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_heightPercent="8%h">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_weight="7"
+            android:text="移动网路设置" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@mipmap/img_more_s" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/comic_setting"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/net_setting"
+        android:layout_marginTop="3dp"
+        android:background="#FFFFFF"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_heightPercent="8%h">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_weight="7"
+            android:text="漫画阅读设置" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@mipmap/img_more_s" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/novel_setting"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/comic_setting"
+        android:layout_marginTop="3dp"
+        android:background="#FFFFFF"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_heightPercent="8%h">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_weight="7"
+            android:text="小说阅读设置" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@mipmap/img_more_s" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/notice_setting"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/novel_setting"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_heightPercent="8%h">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:text="通知设置" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/upadte_setting"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/notice_setting"
+        android:background="#FFFFFF"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_heightPercent="8%h">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_weight="7"
+            android:text="更新提醒" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:gravity="right"
+            android:text="两天一发" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@mipmap/img_more_s" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/download_setting"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/upadte_setting"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_heightPercent="8%h">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:text="下载设置" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/download_where"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/download_setting"
+        android:background="#FFFFFF"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        app:layout_heightPercent="8%h">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginLeft="16dp"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:text="下载保存位置" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginLeft="16dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="手机里"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/clear_cache"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/download_where"
+        android:layout_marginTop="3dp"
+        android:background="#FFFFFF"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_heightPercent="8%h">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_weight="7"
+            android:text="清理缓存" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="233M" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/suggestion_setting"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/clear_cache"
+        android:layout_marginTop="3dp"
+        android:background="#FFFFFF"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_heightPercent="8%h">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_weight="7"
+            android:text="意见反馈" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@mipmap/img_more_s" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/about_setting"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/suggestion_setting"
+        android:layout_marginTop="3dp"
+        android:background="#FFFFFF"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_heightPercent="8%h">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_weight="7"
+            android:text="关于我们" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@mipmap/img_more_s" />
+    </LinearLayout>
+
+</com.zhy.android.percent.support.PercentRelativeLayout>

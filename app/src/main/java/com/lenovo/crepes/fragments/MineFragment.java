@@ -18,6 +18,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.lenovo.crepes.LoginAndRegistActivity;
 import com.lenovo.crepes.R;
+import com.lenovo.crepes.SettingsActivity;
 import com.lenovo.crepes.app.MyApp;
 import com.lenovo.crepes.base.BaseFragment;
 import com.lenovo.crepes.common.Common;
@@ -123,6 +124,7 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.iv_mine_setting://设置
+                startActivity(new Intent(activity,SettingsActivity.class));
                 break;
             case R.id.ll_mine_comic://我的漫画/小说
                 break;

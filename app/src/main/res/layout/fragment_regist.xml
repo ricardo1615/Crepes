@@ -1,0 +1,93 @@
+<com.zhy.android.percent.support.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    tools:context="com.lenovo.crepes.fragments.LoginAndRegist.RegistFragment">
+
+    <TextView
+        android:id="@+id/login_fragment_title"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        android:text="邮箱注册"
+        app:layout_heightPercent="10%h"
+        app:layout_textSizePercent="5%w" />
+
+    <ImageView
+        android:id="@+id/regist_back"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="center"
+        android:src="@mipmap/img_back"
+        app:layout_heightPercent="10%h"
+        app:layout_widthPercent="10%h" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_alignBottom="@+id/login_fragment_title"
+        android:scaleType="fitXY"
+        android:src="@mipmap/img_work_instru_bac" />
+
+    <ImageView
+        android:id="@+id/iv_regist_photo"
+        android:layout_below="@id/login_fragment_title"
+        android:layout_marginTop="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:src="@mipmap/img_def_head"/>
+
+    <EditText
+        android:id="@+id/ed_regist_name"
+        android:hint="请输入用户名"
+        android:padding="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/iv_regist_photo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/ed_regist_email"
+        android:hint="请输入邮箱@"
+        android:padding="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/ed_regist_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/ed_regist_password"
+        android:hint="请输入密码"
+        android:padding="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/ed_regist_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/ed_regist_password_again"
+        android:hint="确认密码"
+        android:padding="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/ed_regist_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btn_regist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ed_regist_password_again"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/login_button"
+        android:text="加入动漫之家"
+        android:textColor="#ffffff"
+        app:layout_marginLeftPercent="5%w"
+        app:layout_marginRightPercent="5%w" />
+
+</com.zhy.android.percent.support.PercentRelativeLayout>
