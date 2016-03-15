@@ -19,6 +19,7 @@ import com.lenovo.crepes.common.Common;
 import com.lenovo.crepes.customerView.CharsetDetector;
 import com.lenovo.crepes.customerView.ReadView;
 import com.lenovo.crepes.entities.ArrayListEvent;
+import com.lenovo.crepes.entities.LoadingDialog;
 import com.lenovo.crepes.entities.NovelChapter;
 import com.lenovo.crepes.utils.ScreenBrightUtils;
 import com.lidroid.xutils.exception.HttpException;
@@ -59,6 +60,7 @@ public class NovelCotentActivity extends AppCompatActivity implements View.OnCli
     private List<Integer> pageList;
     int size = 3;
     private int i = 1;
+    private LoadingDialog loadingDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -189,14 +191,29 @@ public class NovelCotentActivity extends AppCompatActivity implements View.OnCli
         return super.dispatchTouchEvent(ev);
     }
 
+    /**
+     * 向前翻页
+     */
     private void moveToPreviousPage() {
-        if (pageList.size() > 0 && i > 1) {
-            i--;
-            loadPage(pageList.get(i - 1));
-            tv_novel_content.resize();
+        if (pageList.size() > 0) {
+            if (i > 1) {
+                i--;
+                loadPage(pageList.get(i - 1));
+                tv_novel_content.resize();
+            } else {
+                if (position > 1) {
+                    position--;
+                    sendNovelContentRequest(0);
+                } else {
+                    Toast.makeText(this, "前方空空如也", Toast.LENGTH_LONG).show();
+                }
+            }
         }
     }
 
+    /**
+     * 向后翻页
+     */
     private void moveToNextPage() {
         if (pageList.size() > i) {
             i++;
@@ -208,14 +225,38 @@ public class NovelCotentActivity extends AppCompatActivity implements View.OnCli
             pageList.add(pagePosition);
             loadPage(pagePosition);
             tv_novel_content.resize();
+        } else if (buffer.length() <= tv_novel_content.getCharNum()) {
+            if (position < list.size()) {
+                position++;
+                sendNovelContentRequest(1);
+            } else {
+                Toast.makeText(this, "前方空空如也", Toast.LENGTH_LONG).show();
+            }
         }
     }
 
-    private void sendNovelContentRequest() {
+    /**
+     * 编辑并发送请求
+     */
+    private void sendNovelContentRequest(int to) {
 
-        int volumeId = list.get(position).getP_volume_id();
         int chapterId = list.get(position).getChapter_id();
-
+        if (chapterId == -1) {
+            if (to == 0 && position > 1) {
+                position--;
+            } else if (to == 1 && position < list.size()) {
+                position++;
+            } else {
+                Toast.makeText(this, "前方空空如也", Toast.LENGTH_LONG).show();
+                return;
+            }
+            chapterId = list.get(position).getChapter_id();
+        }
+        int volumeId = list.get(position).getP_volume_id();
+        if (loadingDialog == null) {
+            loadingDialog = new LoadingDialog(this);
+        }
+        loadingDialog.show(getSupportFragmentManager(), "NovelCotentActivity");
         String filePath = novelid + "/" + volumeId + "/" + chapterId;
         filePath = filePathHead + "/" + filePath + ".txt";
 
@@ -230,6 +271,9 @@ public class NovelCotentActivity extends AppCompatActivity implements View.OnCli
     }
 
     private void displayNovelContent(File file) {
+        if (loadingDialog != null) {
+            loadingDialog.dismiss();
+        }
         loadBook(file);
         loadPage(0);
         pageList.add(0);
@@ -274,6 +318,7 @@ public class NovelCotentActivity extends AppCompatActivity implements View.OnCli
             }
         }
     }
+
     /*
     * 文本文件中的Html标签去掉
     * */
@@ -346,7 +391,7 @@ public class NovelCotentActivity extends AppCompatActivity implements View.OnCli
 
                     @Override
                     public void onFailure(HttpException error, String msg) {
-                        Toast.makeText(NovelCotentActivity.this, "", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(NovelCotentActivity.this, "" + msg, Toast.LENGTH_SHORT).show();
                     }
                 }
 
