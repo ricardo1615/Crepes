@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +22,7 @@ import com.lenovo.crepes.R;
 import com.lenovo.crepes.adapters.CartRecommendViewPagerAdapter;
 import com.lenovo.crepes.app.MyApp;
 import com.lenovo.crepes.base.BaseFragment;
+import com.lenovo.crepes.base.ImageAsyncTask;
 import com.lenovo.crepes.common.Common;
 import com.lenovo.crepes.entities.CartRecommend;
 import com.lenovo.crepes.entities.TellMeWhy;
@@ -150,7 +152,8 @@ public class RecommendFragment extends BaseFragment implements View.OnClickListe
         ImageView cart_item_imageview = (ImageView) jinqibikan1.findViewById(R.id.cart_item_imageview);
         TextView cart_item_title = (TextView) jinqibikan1.findViewById(R.id.cart_item_title);
         TextView cart_item_auther = (TextView) jinqibikan1.findViewById(R.id.cart_item_auther);
-        MyApp.getMybitmapUtils().display(cart_item_imageview, dataEntity.getCover());
+//        MyApp.getMybitmapUtils().display(cart_item_imageview, dataEntity.getCover());
+        new ImageAsyncTask(cart_item_imageview,3).execute(dataEntity.getCover());
         cart_item_title.setText(dataEntity.getTitle());
         cart_item_auther.setText(dataEntity.getAuthors());
         cart_item_imageview.setTag(dataEntity.getId() + "");
@@ -303,7 +306,8 @@ public class RecommendFragment extends BaseFragment implements View.OnClickListe
     private void item3(CartRecommend.DataEntity dataEntity1, View dashijia1) {
         ImageView cart_item3_imageview = (ImageView) dashijia1.findViewById(R.id.cart_item3_imageview);
         TextView cart_item3_title = (TextView) dashijia1.findViewById(R.id.cart_item3_title);
-        MyApp.getMybitmapUtils().display(cart_item3_imageview, dataEntity1.getCover());
+//        MyApp.getMybitmapUtils().display(cart_item3_imageview, dataEntity1.getCover());
+        new ImageAsyncTask(cart_item3_imageview,3).execute(dataEntity1.getCover());
         cart_item3_title.setText(dataEntity1.getTitle());
         cart_item3_imageview.setTag(dataEntity1.getObj_id() + "");
         cart_item3_imageview.setOnClickListener(this);
@@ -329,7 +333,8 @@ public class RecommendFragment extends BaseFragment implements View.OnClickListe
     private void item2(CartRecommend.DataEntity dataEntity1, View huorezhuanti1) {
         ImageView cart_item2_imageview = (ImageView) huorezhuanti1.findViewById(R.id.cart_item2_imageview);
         TextView cart_item2_title = (TextView) huorezhuanti1.findViewById(R.id.cart_item2_title);
-        MyApp.getMybitmapUtils().display(cart_item2_imageview, dataEntity1.getCover());
+//        MyApp.getMybitmapUtils().display(cart_item2_imageview, dataEntity1.getCover());
+        new ImageAsyncTask(cart_item2_imageview,3).execute(dataEntity1.getCover());
         cart_item2_title.setText(dataEntity1.getTitle());
         cart_item2_imageview.setTag(dataEntity1.getObj_id() + "");
         cart_item2_imageview.setOnClickListener(this);
@@ -353,7 +358,8 @@ public class RecommendFragment extends BaseFragment implements View.OnClickListe
         ImageView cart_item_imageview = (ImageView) jinqibikan1.findViewById(R.id.cart_item_imageview);
         TextView cart_item_title = (TextView) jinqibikan1.findViewById(R.id.cart_item_title);
         TextView cart_item_auther = (TextView) jinqibikan1.findViewById(R.id.cart_item_auther);
-        MyApp.getMybitmapUtils().display(cart_item_imageview, dataEntity.getCover());
+//        MyApp.getMybitmapUtils().display(cart_item_imageview, dataEntity.getCover());
+        new ImageAsyncTask(cart_item_imageview,3).execute(dataEntity.getCover());
         cart_item_title.setText(dataEntity.getTitle());
         cart_item_auther.setText(dataEntity.getSub_title());
         if (dataEntity.getObj_id() != 0) {
@@ -370,7 +376,8 @@ public class RecommendFragment extends BaseFragment implements View.OnClickListe
         for (int i = 0; i < recommends.get(0).getData().size(); i++) {
             ImageView imageview = new ImageView(activity);
             imageview.setTag(recommends.get(0).getData().get(i));
-            MyApp.getMybitmapUtils().display(imageview, recommends.get(0).getData().get(i).getCover());
+//            MyApp.getMybitmapUtils().display(imageview, recommends.get(0).getData().get(i).getCover());
+            new ImageAsyncTask(imageview,2).execute(recommends.get(0).getData().get(i).getCover());
             images.add(imageview);
             //给每一个imageview添加点击事件
             imageview.setId(viewpagers[i]);

@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import com.lenovo.crepes.adapters.ChapterAdapter;
 import com.lenovo.crepes.app.MyApp;
+import com.lenovo.crepes.base.ImageAsyncTask;
 import com.lenovo.crepes.common.Common;
 import com.lenovo.crepes.entities.CartDetail;
 import com.lenovo.crepes.utils.DataTransUtils;
@@ -69,7 +70,8 @@ public class CartDetailActivity extends AppCompatActivity implements View.OnClic
         TextView cart_detail_title = (TextView) findViewById(R.id.cart_detail_title);
         cart_detail_title.setText(cartDetail.getTitle());
         ImageView cart_detail_img = (ImageView) findViewById(R.id.cart_detail_img);
-        MyApp.getMybitmapUtils().display(cart_detail_img,cartDetail.getCover());
+//        MyApp.getMybitmapUtils().display(cart_detail_img,cartDetail.getCover());
+        new ImageAsyncTask(cart_detail_img,3).execute(cartDetail.getCover());
         TextView cart_detail_name1 = (TextView) findViewById(R.id.cart_detail_name1);
         TextView cart_detail_name2 = (TextView) findViewById(R.id.cart_detail_name2);
         TextView [] cart_detail_names=new TextView[]{cart_detail_name1,cart_detail_name2};

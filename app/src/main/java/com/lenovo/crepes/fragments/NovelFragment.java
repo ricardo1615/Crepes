@@ -20,6 +20,7 @@ import com.lenovo.crepes.NovelDetailActivity;
 import com.lenovo.crepes.R;
 import com.lenovo.crepes.adapters.NewsViewPagerAdapter;
 import com.lenovo.crepes.base.BaseFragment;
+import com.lenovo.crepes.base.ImageAsyncTask;
 import com.lenovo.crepes.common.Common;
 import com.lenovo.crepes.entities.Novelhomepager;
 import com.lenovo.crepes.utils.MyHttpUtils;
@@ -113,7 +114,8 @@ public class NovelFragment extends BaseFragment implements View.OnClickListener 
                     for (int i = 0; i < headNovelsList.size(); i++) {
                         image = new ImageView(activity);
                         headNovelsImageList.add(image);
-                        Glide.with(activity).load(headNovelsList.get(0).getData().get(i).getCover()).into(image);
+//                        Glide.with(activity).load(headNovelsList.get(0).getData().get(i).getCover()).into(image);
+                        new ImageAsyncTask(image,3).execute(headNovelsList.get(0).getData().get(i).getCover());
                         image.setTag(i);
                         image.setOnClickListener(NovelFragment.this);
                     }

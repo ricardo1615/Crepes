@@ -9,6 +9,7 @@ import com.lenovo.crepes.R;
 import com.lenovo.crepes.adapters.base.CustomerAdapter;
 import com.lenovo.crepes.adapters.base.ViewHolder;
 import com.lenovo.crepes.app.MyApp;
+import com.lenovo.crepes.base.ImageAsyncTask;
 import com.lenovo.crepes.entities.CartUpdate;
 import com.lenovo.crepes.utils.DataTransUtils;
 
@@ -35,7 +36,9 @@ public class UpdateOfCartAdapter extends CustomerAdapter<CartUpdate> implements 
         TextView update_item_time = (TextView) view.findViewById(R.id.update_item_time);
         ImageView update_item_read = (ImageView) view.findViewById(R.id.update_item_read);
         TextView update_item_data = (TextView) view.findViewById(R.id.update_item_data);
-        MyApp.getMybitmapUtils().display(update_item_imageview, cartUpdate.getCover());
+//        MyApp.getMybitmapUtils().display(update_item_imageview, cartUpdate.getCover());
+        update_item_imageview.setTag(cartUpdate.getCover());
+        new ImageAsyncTask(update_item_imageview,0).execute(cartUpdate.getCover());
         update_item_read.setTag(cartUpdate.getId()+"");
         update_item_read.setOnClickListener(this);
         update_item_title.setText(cartUpdate.getTitle());

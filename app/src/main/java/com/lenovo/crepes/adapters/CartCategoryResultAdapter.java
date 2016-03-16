@@ -10,6 +10,7 @@ import com.lenovo.crepes.R;
 import com.lenovo.crepes.adapters.base.CustomerAdapter;
 import com.lenovo.crepes.adapters.base.ViewHolder;
 import com.lenovo.crepes.app.MyApp;
+import com.lenovo.crepes.base.ImageAsyncTask;
 import com.lenovo.crepes.entities.CartCategoryResult;
 
 import java.util.List;
@@ -31,7 +32,8 @@ public class CartCategoryResultAdapter extends CustomerAdapter<CartCategoryResul
         ImageView cart_item_imageview = (ImageView) view.findViewById(R.id.cart_item_imageview);
         TextView cart_item_title = (TextView) view.findViewById(R.id.cart_item_title);
         TextView cart_item_auther = (TextView) view.findViewById(R.id.cart_item_auther);
-        MyApp.getMybitmapUtils().display(cart_item_imageview,cartCategoryResult.getCover());
+//        MyApp.getMybitmapUtils().display(cart_item_imageview,cartCategoryResult.getCover());
+        new ImageAsyncTask(cart_item_imageview,3).execute(cartCategoryResult.getCover());
         cart_item_imageview.setTag(cartCategoryResult.getId()+"");
         cart_item_imageview.setOnClickListener(this);
         cart_item_title.setText(cartCategoryResult.getTitle());
