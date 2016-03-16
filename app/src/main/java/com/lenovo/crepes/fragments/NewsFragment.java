@@ -28,6 +28,7 @@ import com.lenovo.crepes.adapters.NewsViewPagerAdapter;
 import com.lenovo.crepes.adapters.news.FastNewsAdapter;
 import com.lenovo.crepes.adapters.news.NormalNewsAdapter;
 import com.lenovo.crepes.base.BaseFragment;
+import com.lenovo.crepes.base.ImageAsyncTask;
 import com.lenovo.crepes.base.ListViewForScrollView;
 import com.lenovo.crepes.common.Common;
 import com.lenovo.crepes.entities.FastNews;
@@ -222,9 +223,10 @@ public class NewsFragment extends BaseFragment implements View.OnClickListener {
                             for (int i = 0; i < headNewsList.size(); i++) {
                                 image = new ImageView(activity);
                                 headNewsImageList.add(image);
-                                Glide.with(activity).load(headNewsList.get(i).getPic_url()).centerCrop().into(image);
+//                                Glide.with(activity).load(headNewsList.get(i).getPic_url()).centerCrop().into(image);
                                 image.setTag(i);
                                 image.setOnClickListener(NewsFragment.this);
+                                new ImageAsyncTask(image,2).execute(headNewsList.get(i).getPic_url());
                             }
                             NewsViewPagerAdapter adapter = new NewsViewPagerAdapter(headNewsImageList);
                             vp_news_fragment_head.setAdapter(adapter);

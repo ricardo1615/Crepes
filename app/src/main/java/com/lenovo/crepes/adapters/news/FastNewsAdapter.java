@@ -2,6 +2,8 @@ package com.lenovo.crepes.adapters.news;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -12,10 +14,12 @@ import com.lenovo.crepes.FastCommentActivity;
 import com.lenovo.crepes.R;
 import com.lenovo.crepes.adapters.base.CustomerAdapter;
 import com.lenovo.crepes.adapters.base.ViewHolder;
+import com.lenovo.crepes.base.ImageAsyncTask;
 import com.lenovo.crepes.common.Common;
 import com.lenovo.crepes.entities.FastNews;
 import com.lenovo.crepes.utils.DataTransUtils;
 import com.lenovo.crepes.utils.GlideRoundTransform;
+import com.lenovo.crepes.utils.MyHttpUtils;
 
 import java.util.List;
 
@@ -35,10 +39,22 @@ public class FastNewsAdapter extends CustomerAdapter<FastNews> implements View.O
     @Override
     public void fillData(ViewHolder viewHolder, int position) {
         View view = viewHolder.getView();
+//        //头像
+//        Glide.with(context).load(list.get(position).getCover()).transform(new GlideRoundTransform(context, 10)).into((ImageView) view.findViewById(R.id.iv_fast_author_photo));
+//        //图片
+//        Glide.with(context).load(list.get(position).getImg()).into((ImageView) view.findViewById(R.id.iv_fast_photo));
+
         //头像
-        Glide.with(context).load(list.get(position).getCover()).transform(new GlideRoundTransform(context, 10)).into((ImageView) view.findViewById(R.id.iv_fast_author_photo));
+        ImageView coverView = (ImageView) view.findViewById(R.id.iv_fast_author_photo);
+        String coverUrl = list.get(position).getCover();
+        coverView.setTag(coverUrl);
+        new ImageAsyncTask(coverView,1).execute(coverUrl);
+
         //图片
-        Glide.with(context).load(list.get(position).getImg()).into((ImageView) view.findViewById(R.id.iv_fast_photo));
+        ImageView imageView = (ImageView) view.findViewById(R.id.iv_fast_photo);
+        String imgUrl = list.get(position).getImg();
+        imageView.setTag(imgUrl);
+        new ImageAsyncTask(imageView,0).execute(imgUrl);
 
         Button btn_fast_discuss = (Button) view.findViewById(R.id.btn_fast_discuss);
         Button btn_fast_share = (Button) view.findViewById(R.id.btn_fast_share);

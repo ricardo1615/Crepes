@@ -9,6 +9,7 @@ import com.bumptech.glide.Glide;
 import com.lenovo.crepes.R;
 import com.lenovo.crepes.adapters.base.CustomerAdapter;
 import com.lenovo.crepes.adapters.base.ViewHolder;
+import com.lenovo.crepes.base.ImageAsyncTask;
 import com.lenovo.crepes.common.Common;
 import com.lenovo.crepes.entities.Comment;
 import com.lenovo.crepes.utils.DataTransUtils;
@@ -37,7 +38,10 @@ public class CommentAdapter extends CustomerAdapter<Comment> implements View.OnC
         TextView tv_comment_author_name = (TextView) view.findViewById(R.id.tv_comment_author_name);
 
         if (list.get(position).getHot_comment_amount() != -1) {
-            Glide.with(context).load(list.get(position).getAvatar_url()).transform(new GlideRoundTransform(context, 40)).into(iv_comment_author_photo);
+//            Glide.with(context).load(list.get(position).getAvatar_url()).transform(new GlideRoundTransform(context, 40)).into(iv_comment_author_photo);
+            String avatar_url = list.get(position).getAvatar_url();
+            iv_comment_author_photo.setTag(avatar_url);
+            new ImageAsyncTask(iv_comment_author_photo,1).execute(avatar_url);
         }
         tv_comment_author_name.setText(list.get(position).getNickname());
         ((TextView) view.findViewById(R.id.tv_comment_content)).setText(list.get(position).getContent());
