@@ -47,5 +47,9 @@ public interface Common {
     //注册
     String registUrl = "http://v2.api.dmzj.com/device/cancel";
 
+    //发表评论
+    String sendCommentUrl="http://v2.api.dmzj.com/old/comment/add";
+    //评论点赞
+    String commentZanUrl = "http://v2.api.dmzj.com/old/comment/agree?";
     int[] textSizes = {12,15, 17, 19,21, 23, 25};
 }

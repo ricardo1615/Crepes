@@ -111,14 +111,17 @@ public class NovelCotentActivity extends AppCompatActivity implements View.OnCli
                     case R.id.rb_day:
                         tv_novel_content.setTextColor(Color.BLACK);
                         tv_novel_content.setBackgroundColor(Color.WHITE);
+                        getWindow().getDecorView().setBackgroundColor(Color.WHITE);
                         break;
                     case R.id.rb_night:
                         tv_novel_content.setTextColor(Color.WHITE);
                         tv_novel_content.setBackgroundColor(Color.BLACK);
+                        getWindow().getDecorView().setBackgroundColor(Color.BLACK);
                         break;
                     case R.id.rb_eyes:
                         tv_novel_content.setTextColor(Color.BLACK);
                         tv_novel_content.setBackgroundColor(Color.parseColor("#cce8cf"));
+                        getWindow().getDecorView().setBackgroundColor(Color.parseColor("#cce8cf"));
                         break;
                 }
             }

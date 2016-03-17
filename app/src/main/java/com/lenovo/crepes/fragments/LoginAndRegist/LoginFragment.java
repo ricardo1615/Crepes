@@ -1,6 +1,7 @@
 package com.lenovo.crepes.fragments.LoginAndRegist;
 
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -19,8 +20,23 @@ import com.lenovo.crepes.app.MyApp;
 import com.lenovo.crepes.base.BaseFragment;
 import com.lenovo.crepes.common.Common;
 import com.lenovo.crepes.entities.LoginResult;
+import com.lenovo.crepes.utils.LoginUtils;
 import com.lenovo.crepes.utils.MyHttpUtils;
 import com.lidroid.xutils.http.RequestParams;
+import com.umeng.socialize.bean.CallbackConfig;
+import com.umeng.socialize.bean.SHARE_MEDIA;
+import com.umeng.socialize.bean.ShareType;
+import com.umeng.socialize.bean.SnsAccount;
+import com.umeng.socialize.bean.SocializeConfig;
+import com.umeng.socialize.bean.SocializeEntity;
+import com.umeng.socialize.bean.UMComment;
+import com.umeng.socialize.bean.UMShareMsg;
+import com.umeng.socialize.bean.UMToken;
+import com.umeng.socialize.controller.UMSocialService;
+import com.umeng.socialize.controller.listener.SocializeListeners;
+import com.umeng.socialize.exception.SocializeException;
+import com.umeng.socialize.media.UMImage;
+import com.umeng.socialize.media.UMediaObject;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -90,10 +106,13 @@ public class LoginFragment extends BaseFragment implements View.OnClickListener 
                 }
                 break;
             case R.id.iv_login_weibo://微博登录
+//                LoginUtils.sinlaLogin();
                 break;
             case R.id.iv_login_qq://QQ登录
+//                LoginUtils.qqLogin();
                 break;
             case R.id.iv_login_weixin://微信登录
+//                LoginUtils.weixinLogin();
                 break;
             case R.id.login_back://返回
                 activity.finish();

@@ -41,8 +41,10 @@ public class ImageAsyncTask extends AsyncTask<String, Void, Bitmap> {
         url = params[0];
         if (url != null) {
             byte[] bitMapFromURL = MyHttpUtils.getBitMapFromURL(url);
-            Bitmap bitmap = BitmapFactory.decodeByteArray(bitMapFromURL, 0, bitMapFromURL.length);
-            return bitmap;
+            if (bitMapFromURL != null) {
+                Bitmap bitmap = BitmapFactory.decodeByteArray(bitMapFromURL, 0, bitMapFromURL.length);
+                return bitmap;
+            }
         }
         return null;
     }

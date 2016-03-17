@@ -85,18 +85,29 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_below="@id/rg_comment_type"
-        app:layout_heightPercent="80%h" />
+        app:layout_heightPercent="73%h" />
 
     <LinearLayout
+        android:layout_margin="5dp"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_alignParentBottom="true"
-        app:layout_widthPercent="10%h">
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pulllist_comment"
+        android:orientation="horizontal">
 
         <EditText
-            android:layout_width="match_parent"
+            android:background="@drawable/edittext_background"
+            android:id="@+id/et_comment"
+            android:layout_width="0dp"
+            android:layout_weight="4"
+            android:layout_height="40dp"
+            android:hint="    发表评论" />
+
+        <Button
+            android:id="@+id/btn_send_comment"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:hint="发表评论" />
+            android:text="发送" />
     </LinearLayout>
 
 </com.zhy.android.percent.support.PercentRelativeLayout>

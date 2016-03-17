@@ -5,6 +5,7 @@ import android.os.Message;
 
 import com.google.gson.Gson;
 import com.lenovo.crepes.utils.LogUtils;
+import com.lenovo.crepes.utils.LoginUtils;
 import com.lidroid.xutils.exception.HttpException;
 import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
@@ -28,6 +29,7 @@ public class MyRequestCallBack extends RequestCallBack<String> {
     @Override
     public void onSuccess(ResponseInfo<String> responseInfo) {
         LogUtils.e("AAAA", responseInfo.result);
+        LogUtils.e("SSS",responseInfo.result);
         object = new Gson().fromJson(responseInfo.result, object.getClass());
         if (object!=null){
             Message message = handler.obtainMessage();
