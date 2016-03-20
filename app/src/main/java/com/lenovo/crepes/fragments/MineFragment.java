@@ -21,6 +21,7 @@ import com.lenovo.crepes.R;
 import com.lenovo.crepes.SettingsActivity;
 import com.lenovo.crepes.app.MyApp;
 import com.lenovo.crepes.base.BaseFragment;
+import com.lenovo.crepes.base.ImageAsyncTask;
 import com.lenovo.crepes.common.Common;
 import com.lenovo.crepes.entities.LoginResult;
 import com.lenovo.crepes.utils.GlideRoundTransform;
@@ -68,7 +69,9 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
             btn_login_exit.setBackgroundResource(R.drawable.exit_button);
             tv_user_name.setText(userData.getNickname());
             tv_mine_msg.setVisibility(View.GONE);
-            Glide.with(activity).load(userData.getPhoto()).transform(new GlideRoundTransform(activity, 50)).into(iv_user_photo);
+//            Glide.with(activity).load(userData.getPhoto()).transform(new GlideRoundTransform(activity, 50)).into(iv_user_photo);
+            iv_user_photo.setTag(userData.getPhoto());
+            new ImageAsyncTask(iv_user_photo,1).execute(userData.getPhoto());
         } else {
             if (View.GONE == tv_mine_msg.getVisibility()) {
                 refresh();

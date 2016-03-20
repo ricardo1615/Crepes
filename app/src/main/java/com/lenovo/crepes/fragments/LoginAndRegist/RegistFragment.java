@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 import com.lenovo.crepes.R;
 import com.lenovo.crepes.base.BaseFragment;
+import com.lenovo.crepes.common.Common;
+import com.lenovo.crepes.utils.MyHttpUtils;
 import com.lidroid.xutils.http.RequestParams;
 
 import java.util.regex.Matcher;
@@ -66,7 +68,7 @@ public class RegistFragment extends BaseFragment implements View.OnClickListener
                 String password_again = ed_regist_password_again.getText().toString();
                 if (checkRegistMessage(name, email, password, password_again)) {
                     RequestParams params = new RequestParams();
-//                    MyHttpUtils.sendDataOfPost(Common.registUrl,params,handler,null,100);
+                    MyHttpUtils.sendDataOfPost(Common.registUrl, params, handler, null, 100);
                     Toast.makeText(activity, "姑且算注册了吧", Toast.LENGTH_LONG).show();
                 }
                 break;

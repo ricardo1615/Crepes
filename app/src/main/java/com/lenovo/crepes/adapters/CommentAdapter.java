@@ -8,21 +8,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
 import com.lenovo.crepes.R;
 import com.lenovo.crepes.adapters.base.CustomerAdapter;
 import com.lenovo.crepes.adapters.base.ViewHolder;
-import com.lenovo.crepes.app.MyApp;
 import com.lenovo.crepes.base.ImageAsyncTask;
 import com.lenovo.crepes.common.Common;
 import com.lenovo.crepes.entities.Comment;
 import com.lenovo.crepes.entities.ResultTwo;
-import com.lenovo.crepes.entities.SendCommentMeg;
 import com.lenovo.crepes.interf.AddComment;
 import com.lenovo.crepes.utils.DataTransUtils;
-import com.lenovo.crepes.utils.GlideRoundTransform;
 import com.lenovo.crepes.utils.MyHttpUtils;
-import com.lidroid.xutils.http.RequestParams;
 
 import java.util.List;
 

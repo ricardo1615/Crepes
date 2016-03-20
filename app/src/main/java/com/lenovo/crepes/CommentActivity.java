@@ -213,15 +213,15 @@ public class CommentActivity extends AppCompatActivity implements View.OnClickLi
                             String author = "";
                             int obj_id = newsId;
                             if (isAddComment) {
-                                author_id = "" + addComment.getAuthor_id();
-                                obj_id = addComment.getObj_id();
-                                author = addComment.getNickname();
+                                addComment(""+addComment.getUid(),addComment.getUid(),addComment.getObj_id(),MyApp.getUserData().getPhoto(),MyApp.getUserData().getUid(),s,addComment.getNickname(),MyApp.getUserData().getNickname(),addComment.getId());
+                                isAddComment = false;
+                            } else {
+                                sendComment(author_id, obj_id, MyApp.getUserData().getPhoto(), MyApp.getUserData().getUid(), s, author, MyApp.getUserData().getNickname());
                             }
-                            sendOrAddComment(author_id, obj_id, MyApp.getUserData().getPhoto(), MyApp.getUserData().getUid(), s, author, MyApp.getUserData().getNickname());
                         }
                     }
-                }else {
-                    Toast.makeText(this,"请先登录",Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(this, "请先登录", Toast.LENGTH_SHORT).show();
                 }
                 break;
             default:
@@ -241,7 +241,7 @@ public class CommentActivity extends AppCompatActivity implements View.OnClickLi
         addComment = comment;
     }
 
-    public void sendOrAddComment(String author_id, int obj_id, String avatar_url, String uid, String content, String author, String nickname) {
+    public void sendComment(String author_id, int obj_id, String avatar_url, String uid, String content, String author, String nickname) {
         RequestParams requestParams = new RequestParams();
         requestParams.addBodyParameter("author_id", "" + author_id);
         requestParams.addBodyParameter("obj_id", "" + obj_id);
@@ -252,6 +252,20 @@ public class CommentActivity extends AppCompatActivity implements View.OnClickLi
         requestParams.addBodyParameter("nickname", nickname);
         requestParams.addBodyParameter("type", "" + 2);
         requestParams.addBodyParameter("pid", "" + 0);
+        MyHttpUtils.sendDataOfPost(Common.sendCommentUrl, requestParams, handler, new SendCommentMeg(), SENDCOMMENT);
+    }
+
+    public void addComment(String author_id, int to_uid, int obj_id,String avatar_url, String uid, String content, String author, String nickname,int to_comment_id) {
+        RequestParams requestParams = new RequestParams();
+        requestParams.addBodyParameter("author_id", "" + author_id);
+        requestParams.addBodyParameter("to_uid", "" + to_uid);
+        requestParams.addBodyParameter("obj_id", "" + obj_id);
+        requestParams.addBodyParameter("avatar_url", "" + avatar_url);
+        requestParams.addBodyParameter("uid", "" + uid);
+        requestParams.addBodyParameter("content", "" + content);
+        requestParams.addBodyParameter("author", author);
+        requestParams.addBodyParameter("nickname", nickname);
+        requestParams.addBodyParameter("to_comment_id", "" + to_comment_id);
         MyHttpUtils.sendDataOfPost(Common.sendCommentUrl, requestParams, handler, new SendCommentMeg(), SENDCOMMENT);
     }
 }
