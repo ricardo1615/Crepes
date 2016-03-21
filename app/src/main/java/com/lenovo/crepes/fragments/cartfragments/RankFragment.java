@@ -14,6 +14,8 @@ import com.lenovo.crepes.base.BaseFragment;
  * A simple {@link Fragment} subclass.
  */
 public class RankFragment extends BaseFragment {
+    String url = "http://v2.api.dmzj.com/rank/0/0/0/0.json";
+    String urlmore = "http://v2.api.dmzj.com/rank/0/0/0/1.json";
 
 
     public RankFragment() {

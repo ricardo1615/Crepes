@@ -50,12 +50,14 @@ public class CartCategoryActivity extends AppCompatActivity implements View.OnCl
     private LinkedList<ClassifyFilter.ItemsEntity> itemsEntities;
     private StringBuffer buffer;
     private String name;
+    private int id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart_category);
-        name = getIntent().getStringExtra("id");
+        name = getIntent().getStringExtra("name");
+        id = getIntent().getIntExtra("id",-1);
         initview();
         EventBus.getDefault().register(this);
     }
@@ -92,7 +94,7 @@ public class CartCategoryActivity extends AppCompatActivity implements View.OnCl
                 case FILTER:
                     list = (List<ClassifyFilter>) msg.obj;
                     check(name);
-                    MyHttpUtils.sendDataArray(getUrl(buffer),handler,new CartCategoryResult(),RESULT);
+                    MyHttpUtils.sendDataArray(Common.categoryfilterResulthead+id+Common.categoryfilterResultfoot,handler,new CartCategoryResult(),RESULT);
                     itemsEntities = new LinkedList<>();
                     adapter = new ClassifyFilterAdapter(CartCategoryActivity.this, itemsEntities, R.layout.fragment_category_classifyfilter_item);
                     type = category_ticai_id;

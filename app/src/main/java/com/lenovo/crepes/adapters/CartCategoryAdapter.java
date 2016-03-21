@@ -60,16 +60,25 @@ public class CartCategoryAdapter extends CustomerAdapter<CartCategory> implement
 //        });
         new ImageAsyncTask(category_item_imageview,3).execute(cartCategory.getCover());
         category_item_texeview.setText(cartCategory.getTitle());
-        category_item_imageview.setTag(cartCategory.getTitle() + "");
+        DataTrans dataTrans = new DataTrans();
+        dataTrans.name =cartCategory.getTitle();
+        dataTrans.id =cartCategory.getTag_id();
+        category_item_imageview.setTag(dataTrans);
         category_item_imageview.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        String id = (String) v.getTag();
-        Toast.makeText(context, "id=" + id, Toast.LENGTH_LONG).show();
+        DataTrans dataTrans = (DataTrans) v.getTag();
+        Toast.makeText(context, "id=" + dataTrans.id, Toast.LENGTH_LONG).show();
         Intent intent = new Intent(context, CartCategoryActivity.class);
-        intent.putExtra("id", id);
+        intent.putExtra("id", dataTrans.id);
+        intent.putExtra("name", dataTrans.name);
         context.startActivity(intent);
+    }
+
+    private class DataTrans{
+        private int id;
+        private String name;
     }
 }

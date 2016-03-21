@@ -21,7 +21,7 @@ public interface Common {
     String categoryfilter = "http://v2.api.dmzj.com/classify/filter.json";
     //分类过滤结果Url
     String categoryfilterResulthead = "http://v2.api.dmzj.com/classify/";//XXX-XXX-XXX-XXX/0/
-    String categoryfilterResultfoot = "/0.json";
+    String categoryfilterResultfoot = "/0/0.json";
 
     //CartDetailUrl
     String CartDetailUrlhead = "http://v2.api.dmzj.com/comic/";

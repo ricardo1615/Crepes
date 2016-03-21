@@ -15,6 +15,9 @@ import com.lenovo.crepes.base.BaseFragment;
  */
 public class SubjectFragment extends BaseFragment {
 
+    String url = "http://v2.api.dmzj.com/subject/0/0.json";
+    String urlmore = "http://v2.api.dmzj.com/subject/0/1.json";
+
 
     public SubjectFragment() {
         // Required empty public constructor

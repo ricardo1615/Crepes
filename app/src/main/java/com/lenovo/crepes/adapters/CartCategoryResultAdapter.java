@@ -1,11 +1,13 @@
 package com.lenovo.crepes.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.lenovo.crepes.CartDetailActivity;
 import com.lenovo.crepes.R;
 import com.lenovo.crepes.adapters.base.CustomerAdapter;
 import com.lenovo.crepes.adapters.base.ViewHolder;
@@ -43,6 +45,8 @@ public class CartCategoryResultAdapter extends CustomerAdapter<CartCategoryResul
     @Override
     public void onClick(View v) {
         String tag = (String) v.getTag();
-        Toast.makeText(context,"id="+tag,Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(context,CartDetailActivity.class);
+        intent.putExtra("id",tag);
+        context.startActivity(intent);
     }
 }
