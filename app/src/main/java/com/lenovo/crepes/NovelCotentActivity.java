@@ -137,10 +137,10 @@ public class NovelCotentActivity extends AppCompatActivity implements View.OnCli
         novelid = intent.getIntExtra("novelid", -1);
         String urlId = intent.getStringExtra("urlId");
         String filePath = intent.getStringExtra("filePath");
-        filePathHead = getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS).getAbsolutePath();
+        filePathHead = getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS).getAbsolutePath()+"/CrepesNovel";
 
 
-        filePath = getCacheDir().getAbsolutePath() + "/" + filePath + ".txt";
+        filePath = filePathHead + "/" + filePath + ".txt";
         File file = new File(filePath);
         if (file.exists()) {
             displayNovelContent(file);

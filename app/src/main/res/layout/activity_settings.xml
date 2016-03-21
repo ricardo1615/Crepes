@@ -217,15 +217,16 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
-            android:layout_weight="7"
+            android:layout_weight="3"
             android:text="清理缓存" />
 
         <TextView
+            android:id="@+id/tv_file_size"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginRight="16dp"
             android:layout_weight="1"
-            android:gravity="center"
+            android:gravity="right"
             android:text="233M" />
     </LinearLayout>
 
