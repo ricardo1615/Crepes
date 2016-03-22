@@ -4,9 +4,9 @@
     android:layout_height="match_parent"
     tools:context="com.lenovo.crepes.fragments.cartfragments.RankFragment">
 
-    <ExpandableListView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-    </ExpandableListView>
+   <com.handmark.pulltorefresh.library.PullToRefreshListView
+       android:id="@+id/pull_list_rank"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"/>
 
 </FrameLayout>

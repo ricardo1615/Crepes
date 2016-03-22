@@ -23,13 +23,16 @@ public interface Common {
     String categoryfilterResulthead = "http://v2.api.dmzj.com/classify/";//XXX-XXX-XXX-XXX/0/
     String categoryfilterResultfoot = "/0/0.json";
 
+    //排行接口url
+    String rankUrlHead = "http://v2.api.dmzj.com/rank";
+
     //CartDetailUrl
     String CartDetailUrlhead = "http://v2.api.dmzj.com/comic/";
     String CartDetailUrlfoot = ".json";
 
     //ChapterMsg
-    String ChapterMsgurlhead="http://api.dmzj.com/dynamic/comicread/";//8259/43668
-    String ChapterMsgurlfoot=".json";
+    String ChapterMsgurlhead = "http://api.dmzj.com/dynamic/comicread/";//8259/43668
+    String ChapterMsgurlfoot = ".json";
     //read
     String readUrlhead = "http://imgsmall.dmzj.com/";//    y/9949/43726/3
     String readUrlfoot = ".jpg";
@@ -48,8 +51,8 @@ public interface Common {
     String registUrl = "http://v2.api.dmzj.com/device/cancel";
 
     //发表评论
-    String sendCommentUrl="http://v2.api.dmzj.com/old/comment/add";
+    String sendCommentUrl = "http://v2.api.dmzj.com/old/comment/add";
     //评论点赞
     String commentZanUrl = "http://v2.api.dmzj.com/old/comment/agree?";
-    int[] textSizes = {12,15, 17, 19,21, 23, 25};
+    int[] textSizes = {12, 15, 17, 19, 21, 23, 25};
 }
