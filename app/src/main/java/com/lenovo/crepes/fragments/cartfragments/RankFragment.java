@@ -1,17 +1,21 @@
 package com.lenovo.crepes.fragments.cartfragments;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
+import com.lenovo.crepes.CartDetailActivity;
 import com.lenovo.crepes.R;
 import com.lenovo.crepes.adapters.RankListAdapter;
 import com.lenovo.crepes.base.BaseFragment;
@@ -27,8 +31,8 @@ import java.util.List;
  * A simple {@link Fragment} subclass.
  */
 public class RankFragment extends BaseFragment {
-    String url = "http://v2.api.dmzj.com/rank/0/0/0/0.json";
-    String urlmore = "http://v2.api.dmzj.com/rank/0/0/0/1.json";
+//    String url = "http://v2.api.dmzj.com/rank/0/0/0/0.json";
+//    String urlmore = "http://v2.api.dmzj.com/rank/0/0/0/1.json";
     private PullToRefreshListView pull_list_rank;
     private int rankPage=0;
     private List<RankList> lists;
@@ -61,14 +65,23 @@ public class RankFragment extends BaseFragment {
             @Override
             public void onPullDownToRefresh(PullToRefreshBase<ListView> refreshView) {
                 lists.clear();
-                rankPage=0;
-                MyHttpUtils.sendDataArray(getUrl(),handler,new RankList(),100);
+                rankPage = 0;
+                MyHttpUtils.sendDataArray(getUrl(), handler, new RankList(), 100);
             }
 
             @Override
             public void onPullUpToRefresh(PullToRefreshBase<ListView> refreshView) {
                 rankPage++;
-                MyHttpUtils.sendDataArray(getUrl(),handler,new RankList(),100);
+                MyHttpUtils.sendDataArray(getUrl(), handler, new RankList(), 100);
+            }
+        });
+        pull_list_rank.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(activity, CartDetailActivity.class);
+                Log.i("AAAA","positon = "+position);
+                intent.putExtra("id",""+lists.get(position-1).getComic_id());
+                startActivity(intent);
             }
         });
         MyHttpUtils.sendDataArray(getUrl(),handler,new RankList(),100);

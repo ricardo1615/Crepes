@@ -53,12 +53,16 @@ public class ImageAsyncTask extends AsyncTask<String, Void, Bitmap> {
     protected void onPostExecute(Bitmap bitmap) {
         switch (imageType) {
             case 0://复用性条目
+            case 4://复用性条目,边角有弧度
             case 1://圆形头像
                 if (bitmap != null && imageView != null) {
                     String tag = (String) imageView.getTag();
                     if (tag != null && url != null && tag.equals(url)) {
                         if (imageType == CIRCLEIMAGE) {
                             bitmap = PicUtil.getRoundedCornerBitmap(bitmap, 2);
+                        }
+                        if (imageType == 4) {
+                            bitmap = PicUtil.getRoundedCornerBitmap(bitmap, 12);
                         }
                         imageView.setImageBitmap(bitmap);
                     }

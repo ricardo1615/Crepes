@@ -1,10 +1,15 @@
 package com.lenovo.crepes.adapters;
 
 import android.content.Context;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.lenovo.crepes.R;
 import com.lenovo.crepes.adapters.base.CustomerAdapter;
 import com.lenovo.crepes.adapters.base.ViewHolder;
+import com.lenovo.crepes.base.ImageAsyncTask;
 import com.lenovo.crepes.entities.RankList;
+import com.lenovo.crepes.utils.DataTransUtils;
 
 import java.util.List;
 
@@ -23,6 +28,13 @@ public class RankListAdapter extends CustomerAdapter<RankList> {
 
     @Override
     public void fillData(ViewHolder viewHolder, int position) {
-
+        RankList rank = list.get(position);
+        ImageView ivComicCover = (ImageView) viewHolder.findView(R.id.iv_comic_cover);
+        ivComicCover.setTag(rank.getCover());
+        new ImageAsyncTask(ivComicCover, 4).execute(rank.getCover());
+        ((TextView) viewHolder.findView(R.id.tv_comic_name)).setText(rank.getTitle());
+        ((TextView) viewHolder.findView(R.id.tv_comic_author)).setText(rank.getAuthors());
+        ((TextView) viewHolder.findView(R.id.tv_comic_tag)).setText(rank.getTypes());
+        ((TextView) viewHolder.findView(R.id.tv_comic_clock)).setText(DataTransUtils.transdata(rank.getLast_updatetime() * 1000L, "yyyy-MM-dd"));
     }
 }
