@@ -79,7 +79,6 @@ public class RankFragment extends BaseFragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(activity, CartDetailActivity.class);
-                Log.i("AAAA","positon = "+position);
                 intent.putExtra("id",""+lists.get(position-1).getComic_id());
                 startActivity(intent);
             }

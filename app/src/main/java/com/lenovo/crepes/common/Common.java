@@ -26,6 +26,9 @@ public interface Common {
     //排行接口url
     String rankUrlHead = "http://v2.api.dmzj.com/rank";
 
+    //排行接口url
+    String subjectUrlHead = "http://v2.api.dmzj.com/subject";
+
     //CartDetailUrl
     String CartDetailUrlhead = "http://v2.api.dmzj.com/comic/";
     String CartDetailUrlfoot = ".json";

@@ -4,10 +4,9 @@
     android:layout_height="match_parent"
     tools:context="com.lenovo.crepes.fragments.cartfragments.SubjectFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        android:id="@+id/pull_list_subject"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="主题" />
+        android:layout_height="match_parent"/>
 
 </FrameLayout>
