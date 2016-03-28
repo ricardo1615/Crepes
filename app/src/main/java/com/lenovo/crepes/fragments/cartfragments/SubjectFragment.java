@@ -1,6 +1,7 @@
 package com.lenovo.crepes.fragments.cartfragments;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.os.Handler;
@@ -14,6 +15,7 @@ import android.widget.ListView;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.lenovo.crepes.R;
+import com.lenovo.crepes.SubjectContentActivity;
 import com.lenovo.crepes.adapters.SubjectListAdapter;
 import com.lenovo.crepes.app.MyApp;
 import com.lenovo.crepes.base.BaseFragment;
@@ -76,6 +78,9 @@ public class SubjectFragment extends BaseFragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 //                http://v2.api.dmzj.com/subject/68.json
+                Intent intent = new Intent(activity, SubjectContentActivity.class);
+                intent.putExtra("SubjectList",lists.get(position));
+                startActivity(intent);
             }
         });
 

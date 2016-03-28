@@ -1,9 +1,11 @@
 package com.lenovo.crepes.entities;
 
+import java.io.Serializable;
+
 /**
  * Created by Administrator on 2016/3/26.
  */
-public class SubjectList {
+public class SubjectList implements Serializable{
 
     /**
      * id : 68

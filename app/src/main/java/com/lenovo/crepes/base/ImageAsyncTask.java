@@ -70,7 +70,7 @@ public class ImageAsyncTask extends AsyncTask<String, Void, Bitmap> {
                 }
                 break;
             case 2://轮播器图片
-            case 3://漫画封面图片
+            case 3://单个漫画封面图片
                 if (bitmap != null && imageView!=null) {
                     imageView.setImageBitmap(bitmap);
                 }
