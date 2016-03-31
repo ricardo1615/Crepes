@@ -79,7 +79,7 @@ public class SubjectFragment extends BaseFragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 //                http://v2.api.dmzj.com/subject/68.json
                 Intent intent = new Intent(activity, SubjectContentActivity.class);
-                intent.putExtra("SubjectList",lists.get(position));
+                intent.putExtra("SubjectList",lists.get(position-1));
                 startActivity(intent);
             }
         });

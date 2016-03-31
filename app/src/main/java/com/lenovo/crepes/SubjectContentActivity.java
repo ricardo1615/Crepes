@@ -1,5 +1,6 @@
 package com.lenovo.crepes;
 
+import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
@@ -8,11 +9,13 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.lenovo.crepes.adapters.SubjectContentAdapter;
 import com.lenovo.crepes.base.ImageAsyncTask;
 import com.lenovo.crepes.base.ListViewForScrollView;
 import com.lenovo.crepes.common.Common;
+import com.lenovo.crepes.entities.ResultTwo;
 import com.lenovo.crepes.entities.SubjectDetail;
 import com.lenovo.crepes.entities.SubjectList;
 import com.lenovo.crepes.utils.MyHttpUtils;
@@ -58,7 +61,9 @@ public class SubjectContentActivity extends AppCompatActivity implements View.On
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (list != null && list.size() > 0) {
-
+                    Intent intent = new Intent(SubjectContentActivity.this,CartDetailActivity.class);
+                    intent.putExtra("id", ""+list.get(position).getId());
+                    startActivity(intent);
                 }
             }
         });
@@ -82,8 +87,16 @@ public class SubjectContentActivity extends AppCompatActivity implements View.On
                     tvSubjectDescription.setText(subjectDetail.getDescription());
                     if (subjectDetail.getComics() != null) {
                         list.addAll(subjectDetail.getComics());
-                        adapter = new SubjectContentAdapter(SubjectContentActivity.this, list, R.layout.item_subject_content);
+                        adapter = new SubjectContentAdapter(SubjectContentActivity.this, list, R.layout.item_subject_content,handler);
                         listViewForScrollView.setAdapter(adapter);
+                    }
+                    break;
+                case 200:
+                    ResultTwo resultTwo = (ResultTwo) msg.obj;
+                    if (resultTwo != null && resultTwo.getCode()==0 &&"OK".equals(resultTwo.getMsg())) {
+                        Toast.makeText(SubjectContentActivity.this,"订阅成功",Toast.LENGTH_SHORT).show();
+                    }else {
+                        Toast.makeText(SubjectContentActivity.this,"订阅失败",Toast.LENGTH_SHORT).show();
                     }
                     break;
             }

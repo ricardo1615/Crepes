@@ -83,7 +83,8 @@
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity android:name=".FastCommentActivity" />
-        <activity android:name=".SubjectContentActivity"></activity>
+        <activity android:name=".SubjectContentActivity" />
+        <activity android:name=".SubscribeActivity"></activity>
     </application>
 
 </manifest>

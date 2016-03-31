@@ -29,6 +29,9 @@ public interface Common {
     //排行接口url
     String subjectUrlHead = "http://v2.api.dmzj.com/subject";
 
+    //漫画订阅接口url
+    String subscribeUrl = "http://v2.api.dmzj.com/subscribe/add";
+
     //CartDetailUrl
     String CartDetailUrlhead = "http://v2.api.dmzj.com/comic/";
     String CartDetailUrlfoot = ".json";
