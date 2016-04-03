@@ -17,6 +17,16 @@ public class MyApp extends Application {
     private static HttpUtils myhttpUtils;
     private static BitmapUtils mybitmapUtils;
     private static LoginResult.DataEntity userData;
+
+    public static MyApp getInstance() {
+        return instance;
+    }
+
+    public static void setInstance(MyApp instance) {
+        MyApp.instance = instance;
+    }
+
+    private static MyApp instance;
 //    // 首先在您的Activity中添加如下成员变量 分享
 //    final static UMSocialService mController = UMServiceFactory.getUMSocialService("com.umeng.share");
 
@@ -41,7 +51,7 @@ public class MyApp extends Application {
         super.onCreate();
         myhttpUtils = new HttpUtils(2 * 5000);
         mybitmapUtils = new BitmapUtils(this);
-
+        setInstance(this);
 
 //        //分享控制
 //        mController.getConfig().removePlatform(SHARE_MEDIA.RENREN, SHARE_MEDIA.DOUBAN);

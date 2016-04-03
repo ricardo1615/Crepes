@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.lenovo.crepes.LoginAndRegistActivity;
@@ -73,7 +74,7 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
             tv_mine_msg.setVisibility(View.GONE);
 //            Glide.with(activity).load(userData.getPhoto()).transform(new GlideRoundTransform(activity, 50)).into(iv_user_photo);
             iv_user_photo.setTag(userData.getPhoto());
-            new ImageAsyncTask(iv_user_photo,1).execute(userData.getPhoto());
+            new ImageAsyncTask(iv_user_photo, 1).execute(userData.getPhoto());
         } else {
             if (View.GONE == tv_mine_msg.getVisibility()) {
                 refresh();
@@ -129,10 +130,16 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.iv_mine_setting://设置
-                startActivity(new Intent(activity,SettingsActivity.class));
+                startActivity(new Intent(activity, SettingsActivity.class));
                 break;
             case R.id.ll_mine_comic://我的漫画/小说
-                startActivity(new Intent(activity, SubscribeActivity.class));
+                if (MyApp.getUserData() != null && MyApp.getUserData().getUid() != null) {
+                    Intent intent1 = new Intent(activity, SubscribeActivity.class);
+                    intent1.putExtra("type", 0);
+                    startActivity(intent1);
+                } else {
+                    Toast.makeText(activity, "请先登录", Toast.LENGTH_SHORT).show();
+                }
                 break;
             case R.id.ll_mine_history://我的浏览历史
                 break;
